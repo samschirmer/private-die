@@ -1,5 +1,6 @@
 require "./analytical.rb"
 require "./professional.rb"
+require "./lucky.rb"
 require "./cpu.rb"
 require "./dice.rb"
 require "./config.rb"
@@ -40,7 +41,7 @@ elsif player_char == 3
 	player = Professional::Professional.new
 	professional = true
 elsif player_char == 4
-	player = Characters::Lucky.new
+	player = Lucky::Lucky.new
 elsif player_char == 5
 	player = Characters::Indecisive.new
 elsif player_char == 6
@@ -64,7 +65,7 @@ while game == true
 	# rolling the witness die
 	puts "\nHit ENTER to roll the witness die..."
 	gets.chomp
-	witness_roll = witness_die.roll()
+	witness_roll = witness_die.roll().to_i
 	player.set_witness(witness_roll)
 
 	# announcing witness

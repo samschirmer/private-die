@@ -20,6 +20,9 @@ module Insubordinate
 		def clues()
 			return @clues
 		end
+		def hand()
+			return @hand.count
+		end
 		def total()
 			return @total
 		end
@@ -121,6 +124,7 @@ module Insubordinate
 
 		def bust()
 			print "\nYou busted and lost two clues."
+			gets.chomp
 			if @clues >= 2
 				@clues -= 2
 			else 

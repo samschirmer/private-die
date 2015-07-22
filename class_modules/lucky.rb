@@ -20,6 +20,9 @@ module Lucky
 		def clues()
 			return @clues
 		end
+		def hand()
+			return @hand.count
+		end
 		def total()
 			return @total
 		end

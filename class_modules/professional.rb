@@ -23,6 +23,9 @@ module Professional
 		def total()
 			return @total
 		end
+		def hand()
+			return @hand.count
+		end
 		def set_witness(roll)
 			@witness = roll
 		end
@@ -83,6 +86,7 @@ module Professional
 
 		def bust()
 			print "\nYou busted and lost two clues."
+			gets.chomp
 			if @clues >= 2
 				@clues -= 2
 			else 

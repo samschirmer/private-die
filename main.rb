@@ -128,12 +128,28 @@ while game == true
 		gets.chomp
 
 	elsif winner == "none"
-		puts "You both busted. No one wins!"
+		puts "\nYou both busted. No one wins!"
 		gets.chomp
 
 	else
-		puts "It's a tie! No one gets anything!"
+		puts "\nIt's a tie! Time for a roll-off!"
+		# fetching num of dice rolled by CPU and player
+		cpu_hand = cpu.hand()
+		player_hand = player.hand()
+		# passing it to dice.tie()
+		rolloff_winner = witness_die.tie(player_hand, cpu_hand)
 		gets.chomp
+
+		if rolloff_winner == "player"
+			player.win()
+			gets.chomp
+		elsif rolloff_winner == "cpu"
+			cpu.win()
+			gets.chomp
+		else
+			puts "Something broke."
+		end
+
 	end
 
 	puts "\nThat's the end of the round!"

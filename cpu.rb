@@ -79,7 +79,7 @@ module CPU
 				@total += die_roll
 				# pushing roll values into hand[]
 				@hand.push(die_roll)
-				print "Rolled a #{die_roll}. Opponent now has #{@total} total.\n"
+				print "\nRolled a #{die_roll}. Opponent now has #{@total} total."
 				gets.chomp
 			end
 			return @total

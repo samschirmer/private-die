@@ -1,6 +1,7 @@
-require "./analytical.rb"
-require "./professional.rb"
-require "./lucky.rb"
+require "./class_modules/analytical.rb"
+require "./class_modules/professional.rb"
+require "./class_modules/lucky.rb"
+require "./class_modules/insubordinate.rb"
 require "./cpu.rb"
 require "./dice.rb"
 require "./config.rb"
@@ -36,7 +37,7 @@ cpu = CPU::CPU.new
 if player_char == 1
 	player = Analytical::Analytical.new
 elsif player_char == 2
-	player = Characters::Insubordinate.new
+	player = Insubordinate::Insubordinate.new
 elsif player_char == 3
 	player = Professional::Professional.new
 	professional = true
@@ -98,7 +99,13 @@ while game == true
 	player_hand = player.roll(how_many_dice)
 
 	# evaluating roll
-	player.roll_eval()
+	# handling insubordinate rerolls
+	if player_char == 2
+		player.power()
+	#handling all other class evaluations
+	else
+		player.roll_eval()
+	end
 
 	# playing CPU's turn
 	result = cpu.play(witness_roll)

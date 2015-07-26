@@ -9,7 +9,10 @@ module Config
 			end
 
 			if rules == "Y"
-				#print rulebook here
+				txt = open("./rules.txt")
+				print txt.read
+				txt.close
+				gets.chomp
 			end
 		end
 

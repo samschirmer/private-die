@@ -1,0 +1,12 @@
+This version of Private Die is simple. 
+
+First, choose your detective personality. Each personality has a unique ability that will aid your investigation. After deciding, the actual game begins.
+
+Roll the witness die, and then decide how many of your standard, 6-sided dice you'd like to roll in an effort to match that witness value without going over. If your roll is lower than you'd hoped, you can spend a clue to roll an extra "questioning" die. If you run out of clues or dice, you bust (by exceeding the witness value), or you decide you're happy with your current hand, your turn ends. The computer will now take a turn.
+
+The computer's turn proceeds the same as yours. When the computer finishes her turn, the player with the value closest to the witness without busting wins the round. The winner receives a clue for every die that was rolled in the round. So if you roll 4 dice and win, you receive 4 clues. 
+
+If you tie the computer, you will each re-roll your hand for that round. The highest total roll wins (this rewards taking higher risks during actual gameplay). Player powers and witness values are irrelevant during roll-offs. 
+
+The first player to reach 15 clues wins the game.
+

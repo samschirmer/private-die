@@ -5,7 +5,7 @@ require "./class_modules/insubordinate.rb"
 require "./cpu.rb"
 require "./dice.rb"
 require "./config.rb"
-config = Config::Setup.new
+config = Game_Config::Setup.new
 
 print """
 #####################

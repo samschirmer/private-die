@@ -1,4 +1,4 @@
-module Config
+module Game_Config
 
 	class Setup
 		def rules()

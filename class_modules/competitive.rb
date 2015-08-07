@@ -72,16 +72,6 @@ module Competitive
 		end
 
 		############################
-		#   power function
-		############################
-		def power()
-        	puts "\nYou didn't win, but you're within 2. Time for a roll-off!"
-	        # fetching num of dice rolled by CPU and player
-	        cpu_hand = cpu.hand()
-	        player_hand = player.hand()	
-		end
-
-		############################
 		#   evaluation functions
 		############################
 		def roll_eval()

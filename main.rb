@@ -2,6 +2,7 @@ require "./class_modules/analytical.rb"
 require "./class_modules/professional.rb"
 require "./class_modules/lucky.rb"
 require "./class_modules/insubordinate.rb"
+require "./class_modules/two_faced.rb"
 require "./cpu.rb"
 require "./dice.rb"
 require "./config.rb"
@@ -44,7 +45,7 @@ elsif player_char == 3
 elsif player_char == 4
 	player = Lucky::Lucky.new
 elsif player_char == 5
-	player = Characters::Indecisive.new
+	player = TwoFaced::TwoFaced.new
 elsif player_char == 6
 	player = Characters::Competitive.new
 else
@@ -99,8 +100,8 @@ while game == true
 	player_hand = player.roll(how_many_dice)
 
 	# evaluating roll
-	# handling insubordinate rerolls
-	if player_char == 2
+	# handling insubordinate rerolls and two-faced negative die
+	if (player_char == 2) || (player_char == 5)
 		player.power()
 	#handling all other class evaluations
 	else

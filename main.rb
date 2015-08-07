@@ -3,6 +3,7 @@ require "./class_modules/professional.rb"
 require "./class_modules/lucky.rb"
 require "./class_modules/insubordinate.rb"
 require "./class_modules/two_faced.rb"
+require "./class_modules/competitive.rb"
 require "./cpu.rb"
 require "./dice.rb"
 require "./config.rb"
@@ -47,7 +48,7 @@ elsif player_char == 4
 elsif player_char == 5
 	player = TwoFaced::TwoFaced.new
 elsif player_char == 6
-	player = Characters::Competitive.new
+	player = Competitive::Competitive.new
 else
 	puts "Player character unable to be instantiated for some reason."
 	exit()
@@ -120,6 +121,19 @@ while game == true
 
 	gets.chomp
 
+	if (winner == "cpu") && (player_char == 6) 
+		if player_total.between?((cpu_total - 2), (cpu_total + 2))
+			puts "\nYou didn't win, but you're within 2 of your opponent. Time for a roll-off!"
+			# fetching num of dice rolled by CPU and player
+			winner = "tie"
+			gets.chomp
+		else
+			puts "\nYou're not within 2 of your opponent, so you cannot challenge her."
+			gets.chomp
+		end
+	end
+
+
 	if winner == "player"
 		player.win()
 		gets.chomp
@@ -133,12 +147,11 @@ while game == true
 		gets.chomp
 
 	else
-		puts "\nIt's a tie! Time for a roll-off!"
 		# fetching num of dice rolled by CPU and player
 		cpu_hand = cpu.hand()
 		player_hand = player.hand()
 		# passing it to dice.tie()
-		rolloff_winner = witness_die.tie(player_hand, cpu_hand)
+		rolloff_winner = witness_die.tie(player_hand, cpu_hand, player_char)
 		gets.chomp
 
 		if rolloff_winner == "player"

@@ -25,11 +25,13 @@ module Dice
 			end
 		end
 
-		def tie(player_hand, cpu_hand)
+		def tie(player_hand, cpu_hand, player_char)
 			player_total = 0
 			cpu_total = 0
 			winner = "wat"
 			winner_found = false
+			
+			puts "\nIt's a tie! Time for a roll-off!"
 
 			until winner_found == true do
 				puts "\nYou rolled #{player_hand} and your opponent rolled #{cpu_hand}."
@@ -60,10 +62,17 @@ module Dice
 					winner = "cpu"
 					winner_found = true
 				else
-					puts "\nYou're still tied! Roll again!"
-					cpu_total = 0
-					player_total = 0
-					gets.chomp
+					if player_char == 6
+						puts "As competitive, you win ties in roll-offs."
+						winner = "player"
+						gets.chomp
+						winner_found = true
+					else
+						puts "\nYou're still tied! Roll again!"
+						cpu_total = 0
+						player_total = 0
+						gets.chomp
+					end
 				end
 			end
 

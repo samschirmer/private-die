@@ -24,7 +24,7 @@ module Game_Config
 			puts "\n3) Professional - Before you begin questioning, set one of your dice to a 1 or 6. This counts towards your investigation. Then decide how many more you want to roll."
 			puts "\n4) Lucky - When you bust, roll a die. If the result is even, gain one clue instead of losing clues. If odd, lose one less clue."
 			puts "\n5) Two-Faced - You have an extra die that counts as a negative. After completing your roll, you may roll this extra die for no cost, which will lower your total roll. If you win, you receive one less clue.."
-			puts "\n6) Competitive - If you do not win the round, but you are within two of your opponent's total, you will challenge them to a winner-takes-all roll off, as if you had tied. If you bust, you still lose two clues, but you may still challenge your oppoonent if you're within two."
+			puts "\n6) Competitive - If you do not win the round, but you are within two of your opponent's total, you will challenge them to a winner-takes-all roll off, as if you had tied. If you bust, you still lose two clues, but you may still challenge your opponent if you're within two."
 
 			until (char >= 1) && (char <= 6) do
 				print "\n>> "
